@@ -1,17 +1,23 @@
 module tb_bin2gray;
 
-    parameter WIDTH = 3;
+    parameter WIDTH = 4;
     logic [WIDTH-1:0] binary;
     logic [WIDTH-1:0] gray;
 
-    bin2gray u_bin2gray #(.N(WIDTH)) (.binary(binary),
+    bin2gray #(.N(WIDTH)) u_bin2gray (.binary(binary),
                                       .gray(gray));
     
     initial begin
-        binary = 101;
-        $display("gray of binary code 0b%0b is = 0b%0b",binary,gray);
+      $dumpfile("wave.vcd");
+      $dumpvars;
+        for (int i = 0; i<2**WIDTH; i++)
+        begin
+            binary = i;
+            #50;                                                          
+            $display("gray of binary code 0b%0b is = 0b%0b",binary,gray);
+        end 
 
-        #10;
+        #50;
         $finish;
     end
 endmodule
