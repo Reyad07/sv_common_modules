@@ -7,7 +7,7 @@ module bin2gray #(
 
     logic [N-1:0] temp_gray;
 
-    always_comb begin : xor
+    always_comb begin : xor_block
 
         for (int n = N; n>0 ; n-- ) begin
             temp_gray[N-1] = binary[N-1] ^ binary[N-2];
