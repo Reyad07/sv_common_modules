@@ -24,5 +24,5 @@ module function_tb;
         display_ain_bin();
         $display("Value of addition: %0d",result);
     end
-    
+
 endmodule

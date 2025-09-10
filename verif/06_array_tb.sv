@@ -1,26 +1,26 @@
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: Reyad 
-// 
+// Company:
+// Engineer: Reyad
+//
 // Create Date: 08/06/2025 03:13:41 PM
-// Design Name: 
-// Module Name: array_initialization_tb 
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: array initialization systems 
-// 
-// Dependencies: 
-// 
+// Design Name:
+// Module Name: array_initialization_tb
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description: array initialization systems
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 `timescale 1ns / 1ps    // 10^3 -> 3 precision
 
-module array_initialization_tb; 
+module array_tb;
 
     // uninitalized array
     bit     arr1[]; // default value 0 since bit is 2 state
@@ -30,13 +30,14 @@ module array_initialization_tb;
         $display("arr1: %0p", arr1);
         $display("arr2: %0p", arr2);
     end
-    
+
     // Unique value array
     int arr3[5] = '{2,4,5,6,8};
     // int arr3[5] = '{2,6,7,8}; // compiler error: array size not matched
 
     initial begin
         $display("arr3: %0p", arr3);
+        $display("size of arr3 is %0d",$size(arr3));
     end
 
     // Repetitive value array
@@ -60,3 +61,11 @@ module array_initialization_tb;
 
 
 endmodule
+
+// VIVADO Output:
+//  arr1: '{}
+//  arr2: '{}
+//  arr3: '{2,4,5,6,8}
+//  size of arr3 is 5
+//  arr4: '{6,6,6,6,6}
+//  arr5: '{3,3,3,3,3,3,3,3}
