@@ -1,5 +1,5 @@
 module pass_by_value_task_swap_tb;
-    
+
     task swap(input bit [3:0]a, input bit [3:0] b);
         int temp;
         temp = a;

@@ -1,6 +1,6 @@
 module task_tb;
 
-    
+
     bit clk = 0;
 
     always #5 clk =~clk;   // 20ns -> 50MHz

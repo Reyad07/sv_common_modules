@@ -13,7 +13,7 @@ module function_tb;
         return ain*bin; //will work
     endfunction
 
-    function void display_ain_bin();    //no return function: used for display
+    function void display();    //no return function: used for display
         //#10;  //ERROR: timing is not allowed
         $display("Value of ain: %0d and bin: %0d",ain,bin);
     endfunction
@@ -21,7 +21,7 @@ module function_tb;
     initial begin
         result = add(ain,bin);
         result1= mul(); //will work as ain and bin is defined before the function is created.
-        display_ain_bin();
+        display();
         $display("Value of addition: %0d",result);
     end
 
